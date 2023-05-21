@@ -1,6 +1,6 @@
 <script setup>
 import HomePanel from "./HomePanel.vue";
-import { findNewAPI, getHotAPI } from "@/apis/home";
+import { findNewAPI } from "@/apis/home";
 import { onMounted, ref } from "vue";
 
 // 获取数据
@@ -10,13 +10,6 @@ const getNewList = async () => {
   newList.value = res.result;
 };
 onMounted(() => getNewList());
-
-const hotList = ref([]);
-const getHotList = async () => {
-  const res = await getHotAPI();
-  hotList.value = res.result;
-};
-onMounted(() => getHotList());
 </script>
 
 <template>
@@ -27,17 +20,6 @@ onMounted(() => getHotList());
           <img :src="item.picture" alt="" />
           <p class="name">{{ item.name }}</p>
           <p class="price">&yen;{{ item.price }}</p>
-        </RouterLink>
-      </li>
-    </ul>
-  </HomePanel>
-  <HomePanel title="人气推荐" sub-title="人气推荐，品质靠谱">
-    <ul class="goods-list">
-      <li v-for="item in hotList" :key="item.id">
-        <RouterLink to="/">
-          <img v-img-lazy="item.picture" alt="" />
-          <p class="name">{{ item.title }}</p>
-          <p class="desc">{{ item.alt }}</p>
         </RouterLink>
       </li>
     </ul>
