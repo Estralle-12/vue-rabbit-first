@@ -58,6 +58,7 @@ const doLogin = () => {
   const { account, password } = form.value;
   // 调用实例方法
   formRef.value.validate(async (valid) => {
+    console.log(valid);
     // valid：所有表单都通过校验，才为true
     if (valid) {
       await userStore.getUserInfo({ account, password });

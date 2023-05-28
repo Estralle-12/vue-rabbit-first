@@ -12,8 +12,13 @@ export const useUserStore = defineStore("user", () => {
     userInfo.value = res.result;
   };
   // 3.以对象的格式吧state和action return
-  return {
-    userInfo,
-    getUserInfo,
-  };
+  return (
+    {
+      userInfo,
+      getUserInfo,
+    },
+    {
+      persist: true,
+    }
+  );
 });
