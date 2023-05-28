@@ -26,7 +26,7 @@
         </template>
         <template v-else>
           <li>
-            <a href="javascript:;" @click="$router.push('login')">请先登录</a>
+            <a href="javascript:;" @click="$router.push('/login')">请先登录</a>
           </li>
           <li><a href="javascript:;">帮助中心</a></li>
           <li><a href="javascript:;">关于我们</a></li>
