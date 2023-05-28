@@ -58,7 +58,7 @@ const doLogin = () => {
   const { account, password } = form.value;
   // 调用实例方法
   formRef.value.validate(async (valid) => {
-    console.log(valid);
+    console.log(valid, userStore.getUserInfo);
     // valid：所有表单都通过校验，才为true
     if (valid) {
       await userStore.getUserInfo({ account, password });
@@ -94,12 +94,12 @@ const doLogin = () => {
         <div class="account-box">
           <div class="form">
             <el-form
+              ref="formRef"
               :model="form"
               :rules="rules"
               label-position="right"
               label-width="60px"
               status-icon
-              ref="formRef"
             >
               <el-form-item prop="account" label="账户">
                 <el-input v-model="form.account" />
