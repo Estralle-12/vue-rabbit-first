@@ -28,9 +28,15 @@ export const useCartStore = defineStore(
       cartList.value.splice(idx, 1);
     };
 
+    // 单选功能
     const singleCheck = (skuId, selected) => {
       const item = cartList.value.find((item) => item.skuId === skuId);
       item.selected = selected;
+    };
+
+    // 全选功能
+    const addCheck = (selected) => {
+      cartList.value.forEach((item) => item.selected === selected);
     };
     // 计算属性
     const allCount = computed(() =>
@@ -40,6 +46,9 @@ export const useCartStore = defineStore(
     const allPrice = computed(() =>
       cartList.value.reduce((a, c) => a + c.count * c.price, 0)
     );
+
+    // 是否全选
+    const isAll = computed(() => cartList.value.every((item) => item.selected));
     return {
       cartList,
       addCart,
@@ -47,6 +56,8 @@ export const useCartStore = defineStore(
       allCount,
       allPrice,
       singleCheck,
+      isAll,
+      addCheck,
     };
   },
   {
