@@ -23,9 +23,9 @@ export const useCartStore = defineStore(
     };
 
     const delCart = (skuId) => {
-      cartList.value.filter((item) => item.skuId !== skuId);
-      // const idx = cartList.value.findIndex((i) => skuId === i.skuId);
-      // cartList.value.splice(idx, 1);
+      // cartList.value.filter((item) => skuId !== item.skuId);
+      const idx = cartList.value.findIndex((i) => skuId === i.skuId);
+      cartList.value.splice(idx, 1);
     };
     // 计算属性
     const allCount = computed(() =>
