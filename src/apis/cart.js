@@ -30,3 +30,12 @@ export const delCartAPI = (ids) => {
     },
   });
 };
+
+// 合并购物车(免得没登录时白操作)
+export const mergeCartAPI = (data) => {
+  return request({
+    url: "/member/cart/merge",
+    method: "POST",
+    data,
+  });
+};

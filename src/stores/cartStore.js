@@ -101,6 +101,7 @@ export const useCartStore = defineStore(
       selectedCount,
       selectedPrice,
       clearCart,
+      updateNewList,
     };
   },
   {
