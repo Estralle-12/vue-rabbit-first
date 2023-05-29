@@ -4,7 +4,7 @@ import { useRouter } from "vue-router";
 import { ElMessage } from "element-plus";
 import "element-plus/theme-chalk/el-message.css";
 
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/userStore";
 const userStore = useUserStore();
 
 // 表单校验（账号名+密码）
