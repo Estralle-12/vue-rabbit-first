@@ -1,5 +1,5 @@
 // 封装倒计时逻辑函数
-import { computed, onUnMounted, ref } from "vue";
+import { computed, onUnmounted, ref } from "vue";
 import dayjs from "dayjs";
 
 export const useCountDown = () => {
@@ -19,7 +19,7 @@ export const useCountDown = () => {
   };
 
   //   组件销毁时清除定时器
-  onUnMounted(() => {
+  onUnmounted(() => {
     timer && clearInterval(timer);
   });
   return { formatTime, start };
