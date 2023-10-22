@@ -48,6 +48,7 @@ export const useCartStore = defineStore(
       } else {
         // cartList.value.filter((item) => skuId !== item.skuId);
         const idx = cartList.value.findIndex((i) => skuId === i.skuId);
+
         cartList.value.splice(idx, 1);
       }
     };

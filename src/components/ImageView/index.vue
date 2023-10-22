@@ -28,7 +28,7 @@ const top = ref(0);
 const positionX = ref(0);
 const positionY = ref(0);
 // 3.控制滑块跟随鼠标移动（监听elementX/Y变化，一旦变化，重新设置left/top
-watch([elementX, elementY], () => {
+watch([elementX, elementY, isOutside], () => {
   // 如果鼠标没有移动到盒子里面，不执行以下操作
   if (isOutside.value) return;
   // 有效范围内控制滑块距离

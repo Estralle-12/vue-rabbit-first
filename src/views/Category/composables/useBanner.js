@@ -8,7 +8,7 @@ export function useBanner() {
     const res = await getBannerAPI({
       distributionSite: "2",
     });
-    console.log(res);
+    // console.log(res);
     bannerList.value = res.result;
   };
   onMounted(() => getBanner());

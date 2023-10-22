@@ -49,7 +49,7 @@ const creatOrder = async () => {
     }),
     addressId: curAddress.value.id,
   });
-  const orderId = res.result.id;
+  const orderId = res.result.id; // 调用订单接口生成id，携带到支付页
   router.push({
     path: "/pay",
     query: {
@@ -181,9 +181,9 @@ const creatOrder = async () => {
       <div
         class="text item"
         :class="{ active: activeAddress.id === item.id }"
-        @click="switchAddress(item)"
         v-for="item in checkInfo.userAddresses"
         :key="item.id"
+        @click="switchAddress(item)"
       >
         <ul>
           <li>

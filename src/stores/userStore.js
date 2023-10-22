@@ -42,6 +42,9 @@ export const useUserStore = defineStore(
     };
   },
   {
+    // 用户数据中有一个关键的数据叫做 Token（用来标识当前用户是否登录)，而 Token 持续一段时间才会过期。
+    // Pinia 的存储是基于内存的，刷新就丢失，为了保持登录状态就要做到刷新不丢失，需要配合持久化进行存储。
+    // 对 store 持久化配置
     persist: true,
   }
 );

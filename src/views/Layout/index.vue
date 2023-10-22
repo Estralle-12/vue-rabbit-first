@@ -16,6 +16,9 @@ onMounted(() => categoryStore.getCategory());
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
+
+  <!-- 二级路由出口组件 -->
   <RouterView />
+
   <LayoutFooter />
 </template>
